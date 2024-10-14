@@ -36,7 +36,7 @@ def display_samples(images, yolo_model):
 
 def get_images():
     images = []
-    folder_path = 'test'
+    folder_path = 'datasets/Val/Glioma/images'
     image_extensions = ['*.jpg', '*.jpeg', '*.png', '*.gif', '*.bmp', '*.tiff']
 
     for root, dirs, files in os.walk(folder_path):
@@ -49,7 +49,7 @@ def get_images():
 
 if __name__ == '__main__':
     # Load a model
-    model = YOLO("C:/Projects/brain_tumor/yolo_train/runs/detect/train3/weights/best.pt")  # load a custom model
+    model = YOLO("runs/detect/train/weights/best.pt")  # load a custom model
     images = get_images()
-    model.predict(source=images, save=True, conf=0.01)
+    model.predict(source=images[:10], save=True, conf=0.01)
 

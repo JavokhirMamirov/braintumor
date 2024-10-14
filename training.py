@@ -8,9 +8,9 @@ def main():
     # Train the model
     train_results = model.train(
         data=dataset,  # path to dataset YAML
-        epochs=200,  # number of training epochs
+        epochs=500,  # number of training epochs
         imgsz=512,  # training image size
-        device=0
+        device=0,
     )
 
 
