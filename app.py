@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 import matplotlib.patches as patches
 
-model = YOLO("runs/detect/train/weights/best.pt")
+model = YOLO("runs/detect/train4/weights/best.pt")
 classes = ["Glioma", "Meningioma", "No Tumor", "Pituitary"]
 val_images_path = "datasets/Val/Glioma/images/"
 
@@ -130,10 +130,10 @@ def main():
 # img = result[0]
 
 #
-# img = display_samples("datasets/Val/Glioma/images/gg (21).jpg", model, classes)
-# plt.imshow(img)
-# plt.axis('off')  # Optionally remove the axis
-# plt.show()
+img = display_samples("test/gg (1).jpg", model, classes)
+plt.imshow(img)
+plt.axis('off')  # Optionally remove the axis
+plt.show()
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()

@@ -1,4 +1,4 @@
-path: '../../datasets3/Axial'
+path: '../datasets3/Axial'
 train: 'Train'
 val: 'Val'
 
