@@ -113,27 +113,27 @@ def display_samples(image_path, yolo_model, classes):
 
 def main():
     fig, axs = plt.subplots(1, 2, figsize=(12, 12))
-    model = YOLO("runs/detect/train/weights/best.pt")
-    images = get_images(val_images_path)
+    model_1 = YOLO("runs/detect/train/weights/best.pt")
+    model_2 = YOLO("runs/detect/train4/weights/best.pt")
+    image_path = 'test/img_4.png'
     predict_folder = "predict/Glioma"
-    for img in images[:10]:
-        img1 = draw_bounding_boxes_from_labels(img)
-        img2 = display_samples(img, model, classes)
-        axs[0].imshow(img1)
-        axs[1].imshow(img2)
-        axs[0].set_title('Original Image')
-        axs[1].set_title('Predicted Image')
-        plt.savefig(f"{predict_folder}/{img.replace(val_images_path, "")}")
+    img1 = display_samples(image_path, model_1, classes)
+    img2 = display_samples(image_path, model_2, classes)
+    axs[0].imshow(img1)
+    axs[1].imshow(img2)
+    axs[0].set_title('All Training Model Image')
+    axs[1].set_title('Axial Training Model Image')
+    plt.savefig(f"{predict_folder}/{image_path.replace("test/", "")}")
 
 
 # result = model.predict(source="test/img_1.png", conf=0.5)
 # img = result[0]
 
 #
-img = display_samples("test/gg (1).jpg", model, classes)
-plt.imshow(img)
-plt.axis('off')  # Optionally remove the axis
-plt.show()
+# img = display_samples("test/gg (1).jpg", model, classes)
+# plt.imshow(img)
+# plt.axis('off')  # Optionally remove the axis
+# plt.show()
 
-# if __name__ == '__main__':
-#     main()
+if __name__ == '__main__':
+    main()
