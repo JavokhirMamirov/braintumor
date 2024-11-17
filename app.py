@@ -114,8 +114,8 @@ def display_samples(image_path, yolo_model, classes):
 def main():
     fig, axs = plt.subplots(1, 2, figsize=(12, 12))
     model_1 = YOLO("runs/detect/train/weights/best.pt")
-    model_2 = YOLO("runs/detect/train4/weights/best.pt")
-    image_path = 'test/img_4.png'
+    model_2 = YOLO("runs/detect/train5/weights/best.pt")
+    image_path = 'test/img_2.png'
     predict_folder = "predict/Glioma"
     img1 = display_samples(image_path, model_1, classes)
     img2 = display_samples(image_path, model_2, classes)

@@ -10,7 +10,7 @@ def main():
     # Train the model
     train_results = model.train(
         data=dataset,  # path to dataset YAML
-        epochs=100,  # number of training epochs
+        epochs=242,  # number of training epochs
         imgsz=512,  # training image size
         device=0,
     )
