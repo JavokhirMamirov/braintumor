@@ -4,9 +4,6 @@ import os
 import fnmatch
 import matplotlib.pyplot as plt
 
-import matplotlib.patches as patches
-
-model = YOLO("runs/detect/train4/weights/best.pt")
 classes = ["Glioma", "Meningioma", "No Tumor", "Pituitary"]
 val_images_path = "datasets/Val/Glioma/images/"
 
@@ -114,8 +111,8 @@ def display_samples(image_path, yolo_model, classes):
 def main():
     fig, axs = plt.subplots(1, 2, figsize=(12, 12))
     model_1 = YOLO("runs/detect/train/weights/best.pt")
-    model_2 = YOLO("runs/detect/train5/weights/best.pt")
-    image_path = 'test/img_2.png'
+    model_2 = YOLO("runs/detect/train6/weights/best.pt")
+    image_path = 'test/gg (1).jpg'
     predict_folder = "predict/Glioma"
     img1 = display_samples(image_path, model_1, classes)
     img2 = display_samples(image_path, model_2, classes)
@@ -123,17 +120,9 @@ def main():
     axs[1].imshow(img2)
     axs[0].set_title('All Training Model Image')
     axs[1].set_title('Axial Training Model Image')
-    plt.savefig(f"{predict_folder}/{image_path.replace("test/", "")}")
+    plt.show()
 
 
-# result = model.predict(source="test/img_1.png", conf=0.5)
-# img = result[0]
-
-#
-# img = display_samples("test/gg (1).jpg", model, classes)
-# plt.imshow(img)
-# plt.axis('off')  # Optionally remove the axis
-# plt.show()
 
 if __name__ == '__main__':
     main()
