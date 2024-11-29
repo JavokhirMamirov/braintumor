@@ -13,6 +13,7 @@ def main():
         epochs=242,  # number of training epochs
         imgsz=512,  # training image size
         device=0,
+        patience=0,
     )
 
 
